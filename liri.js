@@ -97,10 +97,11 @@ else if (mod === 'movie-this') {
     movieCall(title);
 }
 else if (mod ==='do-what-it-says') {
+    //read txt file and split cmd from param
     fs.readFile('random.txt',"UTF-8", (err, data) => {
     if (err) throw err;
     data = data.split(",");
-    
+    //create bash cmd and run
     var cmd = "node liri.js "+data[0]+" "+data[1];
     console.log(cmd);
 
